@@ -1,5 +1,4 @@
-OOPD Project S2: DPOO-2021-BetweenUs-ICE7
-
+Between-Us-Game
 
 This project has been developed using Java as programming language, and I used IntelliJ Ultimate IDEA as IDE to develop the code in Java. I have used MySQL for the database.
 
