@@ -1,4 +1,6 @@
 Between-Us-Game
+Personalised Replica of AmongUs game
+SignUp and follow the guidelines to play the game
 
 This project has been developed using Java as programming language, and I used IntelliJ Ultimate IDEA as IDE to develop the code in Java. I have used MySQL for the database.
 
