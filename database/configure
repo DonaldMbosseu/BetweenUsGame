@@ -1,0 +1,57 @@
+DROP TABLE User, Graph, Game, Player, Log;
+
+CREATE TABLE User (
+                      userName VARCHAR(255) NOT NULL,
+                      email VARCHAR(255) NOT NULL,
+                      password VARCHAR(255) NOT NULL,
+                      totalWins INT,
+                      PRIMARY KEY (userName)
+);
+
+CREATE TABLE Graph (
+                       id INT NOT NULL AUTO_INCREMENT,
+                       userName VARCHAR(255) NOT NULL,
+                       userWon BOOLEAN,
+                       PRIMARY KEY (id),
+                       FOREIGN KEY (userName) REFERENCES User (userName)
+);
+
+CREATE TABLE Game (
+                      name VARCHAR(255) NOT NULL,
+                      user VARCHAR(255) NOT NULL,
+                      numCharacters INT,
+                      numImpostors INT,
+                      isFinished BOOLEAN,
+                      pauseTime INT,
+                      userColorIndex INT,
+                      map VARCHAR(255),
+                      PRIMARY KEY (name, user),
+                      FOREIGN KEY (user) REFERENCES User (userName)
+);
+
+CREATE TABLE Player (
+                        colorIndex INT NOT NULL,
+                        gameName VARCHAR(255) NOT NULL,
+                        user VARCHAR(255) NOT NULL,
+                        lastRoom VARCHAR(255),
+                        currentRoom VARCHAR(255),
+                        role VARCHAR(255),
+                        isAlive BOOLEAN,
+                        isUser BOOLEAN,
+                        isCooldown BOOLEAN,
+                        isImpostor BOOLEAN,
+                        PRIMARY KEY (colorIndex, gameName, user),
+                        FOREIGN KEY (gameName) REFERENCES Game (name),
+                        FOREIGN KEY (user) REFERENCES Game (user)
+);
+
+CREATE TABLE Log (
+                     colorIndex INT NOT NULL,
+                     time INT NOT NULL,
+                     gameName VARCHAR(255) NOT NULL,
+                     user VARCHAR(255) NOT NULL,
+                     room VARCHAR(255),
+                     PRIMARY KEY (colorIndex, time, gameName, user),
+                     FOREIGN KEY (gameName) REFERENCES Game (name),
+                     FOREIGN KEY (user) REFERENCES User (userName)
+);
