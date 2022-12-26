@@ -4,7 +4,6 @@ SignUp and follow the guidelines to play the game
 
 # :notes: Between-Us-Game
 This project has been developed using Java as programming language, and I used IntelliJ Ultimate IDEA as IDE to develop the code in Java. I have used MySQL for the database.
-
 # :computer: Functioning
 First of all, the user has to create a database in MySQL using any tool that allows to do so, e.g. MySQL Workbench. 
 After that, the database has to be added in the IDE. To do that, I have to click in the right corner were puts Database. 
